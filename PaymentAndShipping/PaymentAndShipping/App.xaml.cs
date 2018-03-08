@@ -13,7 +13,8 @@ namespace PaymentAndShipping
 		{
 			InitializeComponent();
 
-			MainPage = new PaymentAndShipping.Step1();
+			MainPage = new PaymentAndShipping.Step2();
+
 		}
 
 		protected override void OnStart ()
