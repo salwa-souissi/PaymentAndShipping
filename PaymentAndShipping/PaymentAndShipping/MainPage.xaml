@@ -23,8 +23,6 @@
                 <Label Text="                    Confirm" Grid.Row="0" Grid.Column="1" FontSize="14"  WidthRequest="140" HorizontalOptions="EndAndExpand"></Label>
             </StackLayout>
 
-
-
             <!--<Label BindingContext="{x:Reference stepBar}"
                Text="{Binding StepSelected, StringFormat='The Step Selected is {0}'}"/>-->
         </StackLayout>
