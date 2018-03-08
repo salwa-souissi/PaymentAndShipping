@@ -13,7 +13,7 @@ namespace PaymentAndShipping
 		public MainPage()
 		{
 			InitializeComponent();
-	
+            Step1 step1=new Step1();
 		    
 
 		}

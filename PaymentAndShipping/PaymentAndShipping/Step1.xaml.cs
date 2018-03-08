@@ -21,6 +21,7 @@ namespace PaymentAndShipping
 	        Shipping = 35.00;
 	        Vat = 456.00;
 	        Total = Subtotal + Shipping + Vat;
+	        //OutlineColor = Color.Silver,
 	    }
 
 	}

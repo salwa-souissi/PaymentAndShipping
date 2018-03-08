@@ -4,64 +4,85 @@
              x:Class="PaymentAndShipping.Step1">
     <StackLayout x:Name="Step1Layout" Orientation="Vertical">
 
-        <StackLayout Padding="10,20,10,0">
-            <Label Text="How whould you like to pay ?" TextColor="#443e42"></Label>
-            <StackLayout Orientation="Horizontal" Padding="50,0,50,0" >
-                <Frame>
-                    <StackLayout >
-                    <Image Source="credit_card.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" WidthRequest="120"></Image>
-                        <Label Text="Credit Card" HorizontalOptions="Center"  TextColor="#443e42"></Label>
-                    </StackLayout>
-                </Frame>
-                <Frame>
-                    <StackLayout >
-                        <Image Source="BankTransfer.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" WidthRequest="120"></Image>
-                        <Label Text="Bank Transfer" HorizontalOptions="Center"  TextColor="#443e42"></Label>
-                    </StackLayout>
-                </Frame>
-           </StackLayout>
-            <Label Text="Delivery options" TextColor="#443e42"></Label>
-            <StackLayout Orientation="Horizontal" Padding="50,0,50,0">
-                <Frame>
-                    <StackLayout >
-                        <Image Source="Express_Shipping.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" WidthRequest="120"></Image>
-                        <Label Text="Express shipping" HorizontalOptions="Center"  TextColor="#443e42"></Label>
-                    </StackLayout>
-                </Frame>
-                <Frame>
-                    <StackLayout >
-                        <Image Source="Normal_Shipping.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" WidthRequest="120"></Image>
-                        <Label Text="Normal shipping" HorizontalOptions="Center"  TextColor="#443e42"></Label>
-                    </StackLayout>
-                </Frame>
+        <StackLayout Padding="10,10,10,0">
+            <Label Text="How would you like to pay ?" TextColor="#443e42" Margin="0,5,0,5"></Label>
+            <StackLayout Orientation="Horizontal" Padding="30,0,30,0"  HorizontalOptions="FillAndExpand" >
+                <Grid ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+                    <Frame HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+                        <StackLayout >
+                            <Image Source="credit_card.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" ></Image>
+                            <Label Text="Credit Card" HorizontalOptions="Center"  FontSize="10" TextColor="#443e42"></Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="0" Grid.Column="1">
+                        <StackLayout >
+                            <Image Source="BankTransfer.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" WidthRequest="120"></Image>
+                            <Label Text="Bank Transfer" HorizontalOptions="Center"  FontSize="10" TextColor="#443e42"></Label>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                </StackLayout>
+
+
+
+            <Label Text="Delivery options" TextColor="#443e42"  Margin="0,5,0,5"></Label>
+            <StackLayout Orientation="Horizontal" Padding="30,0,30,0"  HorizontalOptions="FillAndExpand" >
+                <Grid ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+                    <Frame HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+                        <StackLayout >
+                            <Image Source="Express_Shipping.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" ></Image>
+                            <Label Text="Express shipping" HorizontalOptions="Center"  FontSize="10" TextColor="#443e42"></Label>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="0" Grid.Column="1">
+                        <StackLayout >
+                            <Image Source="Normal_Shipping.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60" WidthRequest="120"></Image>
+                            <Label Text="Normal shipping" HorizontalOptions="Center"  FontSize="10" TextColor="#443e42"></Label>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
             </StackLayout>
         </StackLayout>
         
         
         
-        <StackLayout Padding="10,0,10,0">
+        <StackLayout Padding="10,10,10,0">
             <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="Gainsboro" HeightRequest="0.5"></BoxView>
         </StackLayout>
        <StackLayout Padding="30,0,30,0">
             <Grid >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-         <Label Text="Subtotal"  TextColor="#443e42"  HeightRequest="40" HorizontalOptions="Start" WidthRequest="100" Grid.Row="0" Grid.Column="0"></Label>
-            <Label Text="9000.00"  TextColor="#443e42" HeightRequest="40" HorizontalOptions="End" Grid.Row="0" Grid.Column="1"></Label>
-            <Label Text="Shipping"  TextColor="#443e42"  HeightRequest="40" HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" ></Label>
-            <Label Text="35.00"  TextColor="#443e42"  HeightRequest="40"  HorizontalOptions="End" Grid.Row="1" Grid.Column="1" ></Label>
-            <Label Text="VAT"   TextColor="#443e42"  HeightRequest="40" HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" ></Label>
-            <Label Text="456.00"  TextColor="#443e42" HeightRequest="40"   HorizontalOptions="End" Grid.Row="2" Grid.Column="1" ></Label>
-            <Label Text="TOTAL" FontAttributes="Bold" TextColor="#443e42"  HeightRequest="30" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" ></Label>
-            <Label Text="9450.00 SAR" FontAttributes="Bold" TextColor="#443e42" HeightRequest="30"  HorizontalOptions="End" Grid.Row="3" Grid.Column="1" ></Label>
+         <Label Text="Subtotal"  TextColor="#443e42"  HorizontalOptions="Start" WidthRequest="100" Grid.Row="0" Grid.Column="0"></Label>
+            <Label Text="9000.00"  TextColor="#443e42"  HorizontalOptions="End" Grid.Row="0" Grid.Column="1"></Label>
+            <Label Text="Shipping"  TextColor="#443e42"   HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" ></Label>
+            <Label Text="35.00"  TextColor="#443e42"    HorizontalOptions="End" Grid.Row="1" Grid.Column="1" ></Label>
+            <Label Text="VAT"   TextColor="#443e42"   HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" ></Label>
+            <Label Text="456.00"  TextColor="#443e42"    HorizontalOptions="End" Grid.Row="2" Grid.Column="1" ></Label>
+            <Label Text="TOTAL" FontAttributes="Bold" TextColor="#443e42"   HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" ></Label>
+            <Label Text="9450.00 SAR" FontAttributes="Bold" TextColor="#443e42"   HorizontalOptions="End" Grid.Row="3" Grid.Column="1" ></Label>
             </Grid>
        </StackLayout>
         <StackLayout Padding="10,0,10,0">
@@ -73,35 +94,16 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
             </Grid>
-            <Button Text="Back" BackgroundColor="#DBB34A"  Grid.ColumnSpan="5" Font="Default" TextColor="White" WidthRequest="190" HeightRequest="70" HorizontalOptions="StartAndExpand" Grid.Row="0" Grid.Column="0" ></Button>
-            <Button Text="Next" BackgroundColor="#443e43" Grid.ColumnSpan="5"  TextColor="White" WidthRequest="190" ContentLayout="Right,0"  HeightRequest="70" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" Image="Right_Arrow.png" ></Button>
+            <Button Text="Back" BackgroundColor="#DBB34A"  Grid.ColumnSpan="5" Font="Default" TextColor="White"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" ></Button>
+            <Button Text="Next" BackgroundColor="#443e43" Grid.ColumnSpan="5"  TextColor="White" ContentLayout="Right,0"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" Image="Right_Arrow.png" ></Button>
         </StackLayout>
 
 
 
-        <StackLayout BackgroundColor="#443E43" VerticalOptions="EndAndExpand" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
-            <Grid >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-            </Grid>
-
-            <Image  Source="Home.png" Grid.Row="0" Grid.Column="0" 	HorizontalOptions="CenterAndExpand" HeightRequest="35" WidthRequest="35"/>
-            <Image Source="Search.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
-            <Image Source="Menu.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
-            <Image  Source="Cart.png" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
-            <Image  Source="Account.png"    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20"/>
-        </StackLayout>
+        
     </StackLayout>
 </ContentPage>

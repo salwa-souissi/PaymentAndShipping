@@ -28,6 +28,25 @@
         </StackLayout>
         <StackLayout x:Name="MyContent">
         </StackLayout>
+        <StackLayout BackgroundColor="#443E43" VerticalOptions="EndAndExpand" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
 
+            <Image  Source="Home.png" Grid.Row="0" Grid.Column="0" 	HorizontalOptions="CenterAndExpand" HeightRequest="35" WidthRequest="35"/>
+            <Image Source="Search.png"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
+            <Image Source="Menu.png" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand"  HeightRequest="20" WidthRequest="20"/>
+            <Image  Source="Cart.png" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
+            <Image  Source="Account.png"    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
