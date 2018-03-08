@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PaymentAndShipping"
+             x:Class="PaymentAndShipping.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <StackLayout Padding="10,20" >
+            <local:StepProgressBarControl  StepColor="#443e42" Steps="3" StepSelected="1" x:Name="stepBar"/>
+            <StackLayout Orientation="Horizontal" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Label BindingContext="{x:Reference stepBar}" Text="      1" Grid.Row="0" FontSize="14" Grid.Column="0" HorizontalOptions="StartAndExpand"  WidthRequest="140" ></Label>
+                <Label  Text="               2" Grid.Row="0" Grid.Column="1" FontSize="14"  WidthRequest="140" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="                    Confirm" Grid.Row="0" Grid.Column="1" FontSize="14"  WidthRequest="140" HorizontalOptions="EndAndExpand"></Label>
+            </StackLayout>
+
+
+
+            <!--<Label BindingContext="{x:Reference stepBar}"
+               Text="{Binding StepSelected, StringFormat='The Step Selected is {0}'}"/>-->
+        </StackLayout>
+        <StackLayout x:Name="MyContent">
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
