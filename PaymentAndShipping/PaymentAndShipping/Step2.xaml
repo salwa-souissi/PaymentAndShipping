@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaymentAndShipping.Step2">
     <StackLayout  x:Name="Step2Layout" Orientation="Vertical">
+        <Label Text="Please enter shipping Adress" TextColor="#443e42" Margin="20,10,10,0"></Label>
         <ScrollView>
             <StackLayout Padding="20,10,10,0">
-                <Label Text="Please enter shipping Adress" TextColor="#443e42" Margin="0,5,0,5"></Label>
                 <Label Text="Receiver Name" TextColor="#8f939c" ></Label>
                 <Entry x:Name="Receiver" FontSize="18" TextColor="#443e42" ></Entry>
                 <StackLayout Padding="10,10,10,0">

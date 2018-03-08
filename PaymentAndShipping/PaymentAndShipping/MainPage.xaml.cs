@@ -13,8 +13,9 @@ namespace PaymentAndShipping
 		public MainPage()
 		{
 			InitializeComponent();
-            Step1 step1=new Step1();
-		    
+		   // Step1Layout.IsVisible = false;
+		 //  Step2Layout.IsVisible = false;
+		    //Step3Layout.IsVisible = false;
 
 		}
 	}

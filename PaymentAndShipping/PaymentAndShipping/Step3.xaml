@@ -2,11 +2,90 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaymentAndShipping.Step3">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome "
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+    <StackLayout  x:Name="Step3Layout" Orientation="Vertical">
+        <StackLayout Padding="20,10,10,0">
+            <Label Text="Please review your cart" TextColor="#443e42" Margin="0,5,0,5"></Label>
         </StackLayout>
-    </ContentPage.Content>
+        <StackLayout Orientation="Vertical"   VerticalOptions="Fill" >
+            <ListView x:Name="ListProducts"  HasUnevenRows="True"   VerticalOptions="Fill" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="20*"/>
+                                    <ColumnDefinition Width="40*"/>
+                                    <ColumnDefinition Width="30*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout   VerticalOptions="Center" Grid.Row="0" Grid.Column="0">
+                                    <Label Text="{Binding Id}" IsVisible="False"></Label>
+                                    <Image Source="close.png"  WidthRequest="15" VerticalOptions="Center">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped">
+                                            </TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Image Source="{Binding Image}"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" >
+                                    
+                                </Image>
+                                <StackLayout HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="2">
+                                    <Label Text="{Binding Designation}" TextColor="#44454a"  FontSize="14" />
+                                    <Label Text="{Binding Status}" TextColor="Gray" Margin="0,5,0,5"/>
+                                </StackLayout>
+                                <Label Text="{Binding Price}" TextColor="#44454a"  VerticalOptions="Center" FontSize="14" Margin="0,5,0,5"   HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="3"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout Padding="10,0,10,0">
+            <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="Gainsboro" HeightRequest="0.5"></BoxView>
+        </StackLayout>
+        <StackLayout Padding="30,0,30,0">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Subtotal"  TextColor="#443e42"  HorizontalOptions="Start" WidthRequest="100" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Text="9000.00"  TextColor="#443e42"  HorizontalOptions="End" Grid.Row="0" Grid.Column="1"></Label>
+                <Label Text="Shipping"  TextColor="#443e42"   HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" ></Label>
+                <Label Text="35.00"  TextColor="#443e42"    HorizontalOptions="End" Grid.Row="1" Grid.Column="1" ></Label>
+                <Label Text="VAT"   TextColor="#443e42"   HorizontalOptions="Start" Grid.Row="2" Grid.Column="0" ></Label>
+                <Label Text="456.00"  TextColor="#443e42"    HorizontalOptions="End" Grid.Row="2" Grid.Column="1" ></Label>
+                <Label Text="TOTAL" FontAttributes="Bold" TextColor="#443e42"   HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" ></Label>
+                <Label Text="9450.00 SAR" FontAttributes="Bold" TextColor="#443e42"   HorizontalOptions="End" Grid.Row="3" Grid.Column="1" ></Label>
+            </Grid>
+        </StackLayout>
+        <StackLayout Padding="10,0,10,0">
+            <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="Gainsboro" HeightRequest="0.5"></BoxView>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10,0,10,0"  HorizontalOptions="FillAndExpand" >
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Button Text="Back" BackgroundColor="#DBB34A"  Grid.ColumnSpan="5" Font="Default" TextColor="White"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" ></Button>
+            <Button Text="Pay" BackgroundColor="#443e43" Grid.ColumnSpan="5"  TextColor="White" ContentLayout="Right,0"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" Image="Right_Arrow.png" ></Button>
+        </StackLayout>
+    </StackLayout>
+
 </ContentPage>

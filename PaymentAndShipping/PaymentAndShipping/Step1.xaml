@@ -58,8 +58,6 @@
             </StackLayout>
         </StackLayout>
         
-        
-        
         <StackLayout Padding="10,10,10,0">
             <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="Gainsboro" HeightRequest="0.5"></BoxView>
         </StackLayout>
