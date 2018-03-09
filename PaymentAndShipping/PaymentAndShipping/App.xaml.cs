@@ -13,7 +13,7 @@ namespace PaymentAndShipping
 		{
 			InitializeComponent();
 
-			MainPage = new PaymentAndShipping.Step3();
+			MainPage = new PaymentAndShipping.MainPage();
 
 		}
 

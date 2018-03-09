@@ -24,5 +24,14 @@ namespace PaymentAndShipping
 	        //OutlineColor = Color.Silver,
 	    }
 
-	}
+	    private void Button_OnBackStep1Clicked(object sender, EventArgs e)
+	    {
+	    }
+	    private void Button_OnNextStep1Clicked(object sender, EventArgs e)
+	    {
+	    //    Step2Layout.IsVisible = true;
+	    //    Step3Layout.IsVisible = false;
+	    //    Step1Layout.IsVisible = false;
+      }
+    }
 }

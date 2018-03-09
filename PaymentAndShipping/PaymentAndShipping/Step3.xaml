@@ -23,8 +23,7 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <StackLayout   VerticalOptions="Center" Grid.Row="0" Grid.Column="0">
-                                    <Label Text="{Binding Id}" IsVisible="False"></Label>
-                                    <Image Source="close.png"  WidthRequest="15" VerticalOptions="Center">
+                                    <Image Source="close.png" x:Key="{Binding Id}"  WidthRequest="15" VerticalOptions="Center">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped">
                                             </TapGestureRecognizer>
@@ -83,8 +82,8 @@
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
             </Grid>
-            <Button Text="Back" BackgroundColor="#DBB34A"  Grid.ColumnSpan="5" Font="Default" TextColor="White"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" ></Button>
-            <Button Text="Pay" BackgroundColor="#443e43" Grid.ColumnSpan="5"  TextColor="White" ContentLayout="Right,0"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" Image="Right_Arrow.png" ></Button>
+            <Button Text="Back" BackgroundColor="#DBB34A"  Grid.ColumnSpan="5" Font="Default" TextColor="White"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Clicked="Button_OnBackStep3Clicked" ></Button>
+            <Button Text="Pay" BackgroundColor="#443e43" Grid.ColumnSpan="5"  TextColor="White" ContentLayout="Right,0"  HeightRequest="70" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" Image="Right_Arrow.png" Clicked="Button_OnNextStep3Clicked" ></Button>
         </StackLayout>
     </StackLayout>
 

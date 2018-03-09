@@ -14,7 +14,6 @@ namespace PaymentAndShipping
 	{
 	    public List<Product> tempdata;
 
-
         public Step3 ()
 		{
 			InitializeComponent ();
@@ -29,7 +28,7 @@ namespace PaymentAndShipping
 	        {
 	            new Product
 	            {Id=1,
-	                Designation = "BROWNIE HIP SUNGLASSES",
+                    Designation = "BROWNIE HIP SUNGLASSES",
 	                Status = "Almost New",
 	                Price = "770.00 SAR",
 	                Image = "img1.png"
@@ -43,7 +42,7 @@ namespace PaymentAndShipping
 	            },
 	            new Product
 	            {Id=3,
-                    Designation = "HANDBAG NATURAL LEATHER",
+	                Designation = "HANDBAG NATURAL LEATHER",
 	                Status = "New",
 	                Price = "770.00 SAR",
 	                Image = "img3.png"
@@ -53,9 +52,16 @@ namespace PaymentAndShipping
 
 	    private void TapGestureRecognizer_OnTapped(object sender,EventArgs e)
 	    {
-            
-
-
+            }
+	    private void Button_OnBackStep3Clicked(object sender, EventArgs e)
+	    {
+	    //    Step2Layout.IsVisible = true;
+	    //    Step3Layout.IsVisible = false;
+	    //    Step1Layout.IsVisible = false;
 	    }
-	}
+	    private void Button_OnNextStep3Clicked(object sender, EventArgs e)
+	    {
+	      
+	    }
+    }
 	}
