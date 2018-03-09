@@ -22,6 +22,7 @@ namespace PaymentAndShipping
             data();
             ListProducts.ItemsSource = tempdata;
 
+
         }
         void data()
         {
@@ -29,21 +30,21 @@ namespace PaymentAndShipping
             tempdata = new List<Product>
             {
                 new Product
-                {Id=1,
+                {Id="1",
                     Designation = "BROWNIE HIP SUNGLASSES",
                     Status = "Almost New",
                     Price = "770.00 SAR",
                     Image = "img1.png"
                 },
                 new Product
-                {Id=2,
+                {Id="2",
                     Designation = "BROWNIE GLASSES HOLDER",
                     Status = "Acceptable",
                     Price = "2200 SAR",
                     Image = "img2.png"
                 },
                 new Product
-                {Id=3,
+                {Id="3",
                     Designation = "HANDBAG NATURAL LEATHER",
                     Status = "New",
                     Price = "770.00 SAR",
@@ -118,6 +119,59 @@ namespace PaymentAndShipping
         {
             ExpressShippingFrame.BackgroundColor = Color.White;
             NormalShippingFrame.BackgroundColor = Color.Black;
+        }
+
+        private void TapGestureRecognizer_CloseTapped(object sender, EventArgs e)
+        {
+
+            List<Product> prods = ListProducts.ItemsSource as List<Product>;
+
+            StackLayout senderView = sender as StackLayout;
+
+            IEnumerable<Label> results = senderView.Children.SkipWhile(delegate (View view) { return view.GetType() != typeof(Label); }).Cast<Label>();
+
+            foreach (Label VARIABLE in results)
+            {
+                prods = prods.SkipWhile(delegate (Product item) { return item.Id.Contains(VARIABLE.Text); }).ToList() ;
+            }
+
+            ListProducts.ItemsSource = prods;
+
+        }
+        
+
+        private void TapGestureRecognizer_OnCloseTapped(object sender, EventArgs e)
+        {
+
+            List<Product> CartList = ListProducts.ItemsSource as List<Product>;
+
+            StackLayout senderView = sender as StackLayout;
+
+            var results = senderView.Children.SkipWhile(delegate (View view) { return view.GetType() != typeof(Label); }).Cast<Label>();
+
+            List<Label> res = new List<Label>();
+
+            using (var sequenceEnum = results.GetEnumerator())
+            {
+                while (sequenceEnum.MoveNext())
+                {
+                    CartList = CartList.SkipWhile(delegate (Product item) { return item.Id.Contains(sequenceEnum.Current.Text); }).ToList();
+                    
+                }
+            }
+
+            //foreach (var VARIABLE in results)
+            //{
+            //    CartList = CartList.SkipWhile(delegate (Product item) { return item.Id.Contains(VARIABLE.Text); }).ToList();
+            //}
+
+
+
+
+
+            ListProducts.ItemsSource = CartList;
+
+
         }
 
 
