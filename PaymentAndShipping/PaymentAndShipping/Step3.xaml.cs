@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,7 +53,38 @@ namespace PaymentAndShipping
 
 	    private void TapGestureRecognizer_OnTapped(object sender,EventArgs e)
 	    {
-            }
+
+	        Image senderImage = sender as Image;
+
+	        StackLayout sts = new StackLayout();
+	        sts = Step3Layout;
+
+
+
+	       
+
+            foreach (Product VARIABLE in tempdata)
+	        {
+	            
+                
+                string id = VARIABLE.Image;
+	            Grid res = null;
+	            res = this.FindByName<Grid>(VARIABLE.Image);
+                Image reImage = senderImage.FindByName<Image>(VARIABLE.Image);
+                if (res == null && reImage == null)
+	            {
+	                //DisplayAlert("test", "error not found", "ok");
+                }
+	            else
+	            {
+	                tempdata.Remove(VARIABLE);
+	            }
+	        }
+
+	        ListProducts.ItemsSource = tempdata;
+	        //DisplayAlert("test", "success", "ok");
+	    }
+
 	    private void Button_OnBackStep3Clicked(object sender, EventArgs e)
 	    {
 	    //    Step2Layout.IsVisible = true;

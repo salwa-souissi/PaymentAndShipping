@@ -5,27 +5,42 @@
              x:Class="PaymentAndShipping.MainPage">
 
     <StackLayout Orientation="Vertical">
-        <StackLayout Padding="10,20" >
-            <local:StepProgressBarControl  StepColor="#443e42" Steps="3" StepSelected="1" x:Name="stepBar"/>
-            <StackLayout Orientation="Horizontal" >
-                <Grid >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                </Grid>
-                <Label BindingContext="{x:Reference stepBar}" Text="      1" Grid.Row="0" FontSize="14" Grid.Column="0" HorizontalOptions="StartAndExpand"  WidthRequest="140" ></Label>
-                <Label  Text="               2" Grid.Row="0" Grid.Column="1" FontSize="14"  WidthRequest="140" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Text="       Confirm" Grid.Row="0" Grid.Column="1" FontSize="14"  WidthRequest="140" HorizontalOptions="EndAndExpand"></Label>
+        <StackLayout Orientation="Horizontal" Padding="0,25,0,0" HorizontalOptions="CenterAndExpand">
+            <StackLayout  HorizontalOptions="Start" >
+                <Frame x:Name="EXStep1" CornerRadius="15" BackgroundColor="#443e42" Padding="1"  HasShadow="False" WidthRequest="30" HeightRequest="30">
+                    <Frame x:Name="INStep1" BackgroundColor="White" HasShadow="False" CornerRadius="15"  WidthRequest="30">
+                    </Frame>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="10,20,10,0">
+                <BoxView HeightRequest="0.5" WidthRequest="80" BackgroundColor="Silver"></BoxView>
+            </StackLayout>
+            <StackLayout  HorizontalOptions="Center">
+                <Frame x:Name="EXStep2" CornerRadius="15" BackgroundColor="Gainsboro" Padding="1,1,1,1"  HasShadow="False" WidthRequest="30" HeightRequest="30">
+                    <Frame x:Name="INStep2" BackgroundColor="White" HasShadow="False" CornerRadius="15"  WidthRequest="30">
+                    </Frame>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="10,20,10,0">
+                <BoxView HeightRequest="0.5" WidthRequest="80" BackgroundColor="Silver"></BoxView>
+            </StackLayout>
+            <StackLayout  HorizontalOptions="End" >
+                <Frame x:Name="EXStep3" CornerRadius="15" BackgroundColor="Silver" Padding="1,1,1,1" HasShadow="False" WidthRequest="30" HeightRequest="30">
+                    <Frame x:Name="INStep3" BackgroundColor="White" HasShadow="False" CornerRadius="15"  WidthRequest="30">
+                    </Frame>
+                </Frame>
             </StackLayout>
         </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="53,0,33,0" >
+            <Label x:Name="step1" TextColor="#443e42"  Text="1" HorizontalOptions="StartAndExpand"></Label>
+            <Label x:Name="step2" TextColor="Silver" Text="     2" HorizontalOptions="CenterAndExpand"></Label>
+            <Label x:Name="stepConfirm" TextColor="Silver" Text="Confirm" HorizontalOptions="EndAndExpand"></Label>
+
+        </StackLayout>
+      
         <StackLayout x:Name="Step1Layout" Orientation="Vertical">
 
-            <StackLayout Padding="10,10,10,0">
+            <StackLayout Padding="10,50,10,0">
                 <Label Text="How would you like to pay ?" TextColor="#443e42" Margin="0,5,0,5"></Label>
                 <StackLayout Orientation="Horizontal" Padding="30,0,30,0"  HorizontalOptions="FillAndExpand" >
                     <Grid ColumnSpacing="10">
@@ -36,7 +51,7 @@
                             <ColumnDefinition Width="50*" />
                             <ColumnDefinition Width="50*" />
                         </Grid.ColumnDefinitions>
-                        <Frame x:Name="CreditCardFrame" CornerRadius="5" BackgroundColor="Gainsboro" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" HasShadow="False">
+                        <Frame x:Name="CreditCardFrame" CornerRadius="5" BackgroundColor="White" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" HasShadow="False">
                             <Frame BackgroundColor="White" HasShadow="False">
                                 <StackLayout >
                                     <Image Source="credit_card.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" ></Image>
@@ -49,7 +64,7 @@
                             </Frame>
                         </Frame>
 
-                        <Frame x:Name="BankTransferFrame" CornerRadius="5" BackgroundColor="Gainsboro" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" HasShadow="False">
+                        <Frame x:Name="BankTransferFrame" CornerRadius="5" BackgroundColor="White" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" HasShadow="False">
                             <Frame BackgroundColor="White" HasShadow="False">
                                 <StackLayout >
                                     <Image Source="BankTransfer.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="120"></Image>
@@ -73,7 +88,7 @@
                             <ColumnDefinition Width="50*" />
                             <ColumnDefinition Width="50*" />
                         </Grid.ColumnDefinitions>
-                        <Frame CornerRadius="5" HasShadow="False" BackgroundColor="Gainsboro" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"  x:Name="ExpressShippingFrame">
+                        <Frame CornerRadius="5" HasShadow="False" BackgroundColor="White" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"  x:Name="ExpressShippingFrame">
                             <Frame BackgroundColor="White" HasShadow="False">
                             <StackLayout >
                                     <Image Source="Express_Shipping.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="120" ></Image>
@@ -85,7 +100,7 @@
                                 </Frame.GestureRecognizers>
                         </Frame>
                         </Frame>
-                        <Frame   CornerRadius="5" HasShadow="False" BackgroundColor="Gainsboro" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" x:Name="NormalShippingFrame">
+                        <Frame   CornerRadius="5" HasShadow="False" BackgroundColor="White" Padding="0.5,0.5,0.5,0.5" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" x:Name="NormalShippingFrame">
                             <Frame BackgroundColor="White" HasShadow="False">
                             <StackLayout >
                                     <Image Source="Normal_Shipping.png"  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30"  WidthRequest="120" ></Image>
@@ -147,7 +162,7 @@
 
         </StackLayout>
         <StackLayout  x:Name="Step2Layout" Orientation="Vertical">
-            <Label Text="Please enter shipping Adress" TextColor="#443e42" Margin="20,10,10,0"></Label>
+            <Label Text="Please enter shipping Adress" TextColor="#443e42" Margin="20,20,10,0"></Label>
             <ScrollView>
                 <StackLayout Padding="20,10,10,0">
                     <Label Text="Receiver Name" TextColor="#8f939c" ></Label>
